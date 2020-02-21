@@ -3,5 +3,7 @@
 var button = document.getElementById("myButton");
 
 button.addEventListener('click', function(){
-    
+    var box = document.getElementById("box");
+    box.style.backgroundColor = "blue";
 })
+
