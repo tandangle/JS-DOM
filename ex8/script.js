@@ -21,6 +21,7 @@ button.addEventListener('click', function(){
             listItem.style.textDecoration = ""
         }
     });
+    // Delete the list item
     var deleteButton = document.createElement("button");
     deleteButton.innerHTML = "Delete";
     deleteButton.classList.add("delete-button");
@@ -33,11 +34,11 @@ button.addEventListener('click', function(){
 })
 
 
+// Allows the text field to be submitted on enter press
 
-
-// button.addEventListener("keyup", function(event) {
-//     if (event.keyCode === 13) {
-//         event.preventDefault();
-//         button.click();
-//     }
-// });
+document.getElementById("description").addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        button.click();
+    }
+});
