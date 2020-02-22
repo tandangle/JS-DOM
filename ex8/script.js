@@ -12,12 +12,23 @@ var button = document.getElementById("add-button");
 
 button.addEventListener('click', function(){
     var listItem = document.createElement("li");
-    var userInput = document.getElementById("description").value;
+    var userInput = document.getElementById("description").value + " ";
     // Bonus part - checkoff each item
     listItem.addEventListener("click", function(){
-        listItem.style.textDecoration = "line-through";
+        if (listItem.style.textDecoration != "line-through"){
+        listItem.style.textDecoration = "line-through";}
+        else {
+            listItem.style.textDecoration = ""
+        }
     });
+    var deleteButton = document.createElement("button");
+    deleteButton.innerHTML = "Delete";
+    deleteButton.classList.add("delete-button");
     listItem.innerHTML = userInput;
+    deleteButton.addEventListener("click", function(){
+        listItem.remove()
+    });
+    listItem.appendChild(deleteButton);
     document.getElementById("todo-list").appendChild(listItem);
 })
 
